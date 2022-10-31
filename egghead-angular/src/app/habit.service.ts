@@ -26,7 +26,7 @@ export class HabitService {
     {
       id: 4,
       title: 'Write for 20 minutes a day',
-      count: 2,
+      count: 6,
     }
   ]
   
@@ -36,7 +36,7 @@ export class HabitService {
     return of(this.habits);
   }
 
-  addHabit(newHabit:{ id:number, title: string}): void {
+  addHabit(newHabit: Habit): void {
     const id = this.habits.length + 1
     newHabit.id = id
     this.habits.push(newHabit)

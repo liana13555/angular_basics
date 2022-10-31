@@ -4,10 +4,11 @@ import { Habit } from '../habit';
 @Component({
   selector: 'app-habit-item',
   template: `
-    <li>{{habit.title}} (Count: {{habit.count}})</li>
+    <li [style.color]="habit.streak ? 'red' : 'black'">
+     {{ habit.title }} (Count: {{habit.count}})
+    </li>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class HabitItemComponent implements OnInit {
   @Input() habit!: Habit
@@ -16,5 +17,4 @@ export class HabitItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
